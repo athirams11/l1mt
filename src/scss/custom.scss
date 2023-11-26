@@ -1,0 +1,240 @@
+@import '~bootstrap/scss/bootstrap';
+
+$body-bg: #FBFBFB;
+$text-color: #3D3D3D;
+$text-muted: #6F6F6F;
+$text-gray: #8B8B8B;
+$dark : #3C3C3C;
+$border-color : #3E3E3E;
+$btn-dark-text : #FCFCFC;
+$border-gray : #CFCFCF;
+$checkbox-bg : #F2F2F2;
+$font-xl : 24px;
+$font-lg : 16px;
+$font-md : 13px;
+$font-sm : 10px;
+
+body {
+    background: $body-bg;
+}
+
+@mixin font($font-weight : 600, $font-size : $font-lg, $line-height: normal) {
+    font-style: normal;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-size: $font-size;
+}
+
+.h-100 {
+    height: 95vh !important;
+}
+
+.form-control {
+    border: 2px solid $border-color;
+    background: $white;
+    border-radius: 0;
+}
+
+.form-control::placeholder {
+    color: $border-color;
+    @include font($font-size : $font-lg);
+}
+
+.text-color {
+    color: $text-color;
+}
+
+h6 {
+    line-height: 0.1em;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+.font-sm {
+    font-size: $font-md;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $body-bg;
+    padding-bottom: 50px;
+    color: $text-color;
+    letter-spacing: 0.39px;
+    @include font(700, $font-md, 19px);
+}
+
+.btn-dark {
+    background-color: $dark;
+    color: $btn-dark-text;
+    border-radius: 0;
+    @include font();
+}
+
+.card {
+    border: 2px solid $border-color;
+    background: $white;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 0;
+
+    .card-title {
+        color: $text-color;
+        text-align: left;
+        @include font($font-size : $font-xl);
+    }
+
+    .card-subtitle {
+        color: $text-muted;
+        letter-spacing: 0.48px;
+        text-align: left;
+        @include font(400, $font-lg, 19px);
+    }
+
+    .card-img {
+        width: 127px;
+        height: 96px;
+        border-radius: 0;
+    }
+}
+
+.pb-15 {
+    padding-bottom: 15px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.nav-link {
+    color: $text-gray;
+}
+
+.header-text {
+    color: $text-color;
+    @include font(700, $font-xl, 34px);
+}
+
+.custom-height {
+    max-height: calc(100vh - 288px);
+    overflow-y: auto;
+}
+
+.form-check-input {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border: 2px solid #000;
+    background: $checkbox-bg;
+    border-radius: 0 !important;
+}
+
+.form-check-label {
+    margin-left: 20px;
+    padding-top: 7px;
+}
+
+.form-check-input:checked {
+    background-color: $dark;
+    border-color: $dark;
+}
+
+@media only screen and (max-width: 575px) {
+    .sm-hidden {
+        display: none !important;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .sm-flex-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url('../assets/navbar.svg');
+    }
+
+    .navbar-toggler {
+        border: none;
+        padding: 0;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        right: 14px;
+        top: 50px;
+        z-index: 10;
+        background: $body-bg;
+        padding: 20px 50px;
+        flex-basis: 100%;
+        flex-grow: 1;
+        border: 1px solid $border-color;
+    }
+
+    .card {
+
+        .card-body {
+            padding: 10px 0px;
+        }
+
+        .card-title {
+            font-size: 14px;
+        }
+
+        .card-subtitle {
+            font-size: $font-md;
+        }
+
+        .card-img {
+            width: 48px;
+            height: 46px;
+        }
+    }
+
+    .mx-40 {
+        margin: 0px 40px 0px 40px;
+    }
+    
+    footer {
+        font-size: $font-sm;
+        padding-bottom: 30px;
+    }
+
+    .icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .g-2,
+    .gy-2 {
+        --bs-gutter-y: 10px;
+    }
+
+    .g-2,
+    .gx-2 {
+        --bs-gutter-x: 50px;
+    }
+
+    .custom-height {
+        max-height: calc(100vh - 245px);
+    }
+
+    .nav-sm-p {
+        padding: 0px 20px;
+    }
+
+    .card-sm-pr {
+        padding-right: 0px;
+    }
+
+    .card-sm-pl {
+        padding-left: 0px;
+    }
+}
